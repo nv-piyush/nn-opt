@@ -1,0 +1,6 @@
+set(LLVM_TARGET_DEFINITIONS NNOptOps.td)
+mlir_tablegen(NNOptOps.h.inc -gen-op-decls)
+mlir_tablegen(NNOptOps.cpp.inc -gen-op-defs)
+mlir_tablegen(NNOptDialect.h.inc -gen-dialect-decls -dialect=nn)
+mlir_tablegen(NNOptDialect.cpp.inc -gen-dialect-defs -dialect=nn)
+add_public_tablegen_target(NNOptOpsIncGen)
